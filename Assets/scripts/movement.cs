@@ -20,5 +20,14 @@ public class movement : MonoBehaviour
         {
             this.transform.position = new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y, gameObject.transform.position.z);
         }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            this.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            this.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z - 1);
+        }
     }
 }

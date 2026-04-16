@@ -4,14 +4,23 @@ public class trigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entro");
+        if(other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Salgo");
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Mantengo");
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
