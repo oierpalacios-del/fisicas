@@ -36,7 +36,7 @@ public class movement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "ground")
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             canJump = true;
         }
