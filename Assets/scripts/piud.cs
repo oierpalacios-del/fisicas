@@ -13,7 +13,6 @@ public class piud : MonoBehaviour
         {
             Debug.Log("Objetivo Alcanzado");
             Destroy(other.gameObject);
-            Destroy(gameObject);
         }
     }
 }

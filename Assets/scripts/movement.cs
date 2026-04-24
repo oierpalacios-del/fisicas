@@ -4,6 +4,7 @@ public class movement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jump_speed;
+    [SerializeField] private Transform camara;
     Rigidbody rb;
     bool canJump;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
