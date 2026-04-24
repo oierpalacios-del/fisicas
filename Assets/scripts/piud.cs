@@ -11,8 +11,8 @@ public class piud : MonoBehaviour
     {
         if (other.gameObject.tag == "Destroyed")
         {
+            other.gameObject.GetComponent<Cube>().changeHealth();
             Debug.Log("Objetivo Alcanzado");
-            Destroy(other.gameObject);
         }
     }
 }

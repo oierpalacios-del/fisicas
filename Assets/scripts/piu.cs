@@ -2,16 +2,8 @@ using UnityEngine;
 
 public class piu : MonoBehaviour
 {
-    GameObject objeto;
-    public GameObject[] objetos;
     [SerializeField] GameObject prefab;
-    private void Start()
-    {
-        foreach(GameObject obj in objetos)
-        {
-            obj.GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-    }
+    GameObject target;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -27,13 +19,16 @@ public class piu : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
         {
-            objeto = hit.collider.gameObject;
-            objeto.GetComponent<MeshRenderer>().material.color = Color.green;
+            if(target != null)
+            {
+                target.GetComponent<Cube>().backToNormal();
+            }
+            hit.collider.gameObject.GetComponent<Cube>().cambioColor();
+            target = hit.collider.gameObject;
             Debug.Log("Did hit " + hit.collider.gameObject.name);
         }
         else
         {
-            objeto.GetComponent<MeshRenderer>().material.color = Color.red;
             Debug.Log("Did not hit");
         }
     }
